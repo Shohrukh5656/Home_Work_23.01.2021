@@ -10,7 +10,7 @@ namespace ConsoleApplication
             //Задание 2.
 
 
-            /*Console.WriteLine("Введите А:");
+            Console.WriteLine("Введите А:");
             Console.Write("A = ");
             var A1 = decimal.TryParse(Console.ReadLine(), out var a1);
             if (!A1)
@@ -48,11 +48,11 @@ namespace ConsoleApplication
                 Console.WriteLine($"Значения между А и В: {i}");
                 sum = sum + i;
             }
-            Console.WriteLine($"Сумма всех чисел расположенных между {a1} и {b1} = {sum}");*/
+            Console.WriteLine($"Сумма всех чисел расположенных между {a1} и {b1} = {sum}");
 
            
            
-            /*Console.WriteLine("Введите А:");
+            Console.WriteLine("Введите А:");
             Console.Write("A = ");
             var A2 = int.TryParse(Console.ReadLine(), out var a2);
             if (!A2)
@@ -92,14 +92,15 @@ namespace ConsoleApplication
                     int nechot = I;
                     Console.Write($"{nechot}, ");
                 }
+                Console.WriteLine();
                 
 
-            }*/
+            }
             
             
             //Задание 3.
 
-            /*int i1 = 0, i2 = 0;
+            int i1 = 0, i2 = 0;
             for (int a = 0; a<14; a++)
             {
                 for (int b = 0; b < 15; b++)
@@ -115,12 +116,13 @@ namespace ConsoleApplication
             {
                 Console.Write("*");
             }
-            Console.Read();*/
+            Console.WriteLine();
+
 
             
             //Задание 4.
 
-            /*Console.Write("Введите сумму вклада: ");
+            Console.Write("Введите сумму вклада: ");
             var Amount = decimal.TryParse(Console.ReadLine(), out var amount);
             if (!Amount)
             {
@@ -154,12 +156,12 @@ namespace ConsoleApplication
                 return;
             }
             
-            Console.Write("Введите сумму вклада: ");
+            Console.Write("Введите ожидаемую сумму приболи: ");
             var Ozhi = decimal.TryParse(Console.ReadLine(), out var ozhi);
             if (!Ozhi)
             {
                 System.Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("Вы ввели не число в Сумму Вклада");
+                Console.WriteLine("Вы ввели не число в ожидаемую сумму приболи");
                 System.Console.ForegroundColor = ConsoleColor.White;
                 return;
             }
@@ -177,13 +179,13 @@ namespace ConsoleApplication
                 amount+= amount * percent /100;
             }
             Console.WriteLine($"Через {month} месеца ваш вклад будет равнятся {ozhi} рубл.");
-            Console.WriteLine($"Ваш итоговый размер вклада через {month} месяца будeт {amount} рубл.");*/
+            Console.WriteLine($"Ваш итоговый размер вклада через {month} месяца будeт {amount} рубл.");
 
 
             //ДЗ №2:
             //Задание 2.
 
-            /*Console.Write("Размер массива: ");
+            Console.Write("Размер массива: ");
             int n = Convert.ToInt32(Console.ReadLine());  
             int[] array = new int[n];
             for (int i = 0; i < array.Length; i++)
@@ -204,28 +206,8 @@ namespace ConsoleApplication
             }
             Console.WriteLine("Наименьшее значение массива: " + array[min]);
 
-            int sum = 0;
-            for (int i=0; i < n; i++)
-                {
-                    int[] a ; 
-                }
-            sum += a[i];*/
 
 
-            Console.Write("Размер массива: ");
-            int n = Convert.ToInt32(Console.ReadLine());  
-            int[] array = new int[n];
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write("array[{0}] = ",i);
-                array[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            int max = 0;
-            for (int i = 1; i < array.Length; i--)
-            {
-                if (array[i] > array[i - 1]) max = i;
-                Console.WriteLine(max); 
-            }
             
         }
     }
