@@ -100,10 +100,39 @@ namespace ConsoleApplication
             
             //Задание 3.
 
-            int i1 = 0, i2 = 0;
-            for (int a = 0; a<14; a++)
+            Console.Write("Введите высоту прямоугольника: ");
+            int height = int.Parse(Console.ReadLine());
+
+            Console.Write("Введите ширину прямоугольника: ");
+            int width = int.Parse(Console.ReadLine());
+
+            for (int j = 0; j <= height; j++)
             {
-                for (int b = 0; b < 15; b++)
+                for (int i = 0; i <= width; i++)
+                {
+                    if ((i == 0 || i == width) || (j == 0 || j == height))
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.Write(" ");    
+                    }
+                }
+                Console.WriteLine();
+            }
+
+
+            Console.Write("Введите высоту Прямоугольного треугольника: ");
+            int height2 = int.Parse(Console.ReadLine());
+
+            Console.Write("Введите ширину Прямоугольного треугольника: ");
+            int width2 = int.Parse(Console.ReadLine());
+
+            int i1 = 0, i2 = 0;
+            for (int a = 0; a < height2; a++)
+            {
+                for (int b = 0; b < width2; b++)
                 {
                     
                     if (b == i1 || b == i2) Console.Write("*");
@@ -112,11 +141,61 @@ namespace ConsoleApplication
                 Console.Write("\n");
                 i2++;
             }
-            for (int b = 0; b < 15; b++)
+            for (int b = 0; b < height2; b++)
             {
                 Console.Write("*");
             }
             Console.WriteLine();
+
+            Console.Write("Введите значения Равносторонного треугольника: ");
+            int ravno = int.Parse(Console.ReadLine());
+            for(int i=1;i<=ravno;i++)
+            {
+                for(int k=ravno-1;k>=i;k--)
+                {
+                    System.Console.Write(" ");
+                }
+                for(int j=1;j<=i;j++)
+                {
+                    if((j==1|| i==j || i==ravno))
+                    {
+                        System.Console.Write("* ");
+                    }
+                    else
+                    {
+                        System.Console.Write(" ");
+                    }
+                }
+                    System.Console.WriteLine();
+            }
+            System.Console.WriteLine();
+
+            Console.Write("Введите значения Ромба:");
+            int romb=int.Parse(Console.ReadLine());
+            int f=romb/2+1;
+            for(int i=1;i<=romb;i++)
+            {
+                for(int j=1;j<=romb;j++)
+                {
+                    if((j==f|| j==romb-f+1))
+                    {
+                        System.Console.Write("*");
+                    }
+                    else
+                    {
+                        System.Console.Write(" ");
+                    }
+                }
+                if(i<=romb/2)
+                {
+                    f--;
+                }
+                else
+                {
+                    f++;
+                }
+            System.Console.WriteLine();
+            }
 
 
             
@@ -187,28 +266,99 @@ namespace ConsoleApplication
 
             Console.Write("Размер массива: ");
             int n = Convert.ToInt32(Console.ReadLine());  
-            int[] array = new int[n];
+            double[] array = new double[n];
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write("array[{0}] = ",i);
                 array[i] = Convert.ToInt32(Console.ReadLine());
             }
-            int max = 0;
-            for (int i = 1; i < array.Length; i++)
+            double max = array[0];
+            double min = array[0];
+            double summ = 0;
+            double arif = 0;
+           
+            System.Console.Write("Все нечетные значения: ");
+            for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] > array[i - 1]) max = i; 
-            }
-            Console.WriteLine("Наибольшее значение массива: " + array[max]);
-            int min = 0;
-            for (int i = 1; i < array.Length; i++)
-            {
-                if (array[i] < array[i - 1]) min = i; 
-            }
-            Console.WriteLine("Наименьшее значение массива: " + array[min]);
+                if (max<=array[i]) max = array[i]; 
+                if (min>=array[i]) min = array[i];
+                summ += array[i];
+                if (array[i] % 2 ==1) Console.Write(array[i]+ ", ");
 
-
+            }
+            Console.WriteLine();
+            arif = summ / array.Length;
+            Console.WriteLine("Наибольшее значение массива: " + max);
+            Console.WriteLine("Наименьшее значение массива: " + min);
+            Console.WriteLine("Общая сумма всех элементов массива: " + summ);
+            Console.WriteLine("Среднее арифметическое всех элементов массива: " + arif);
 
             
+            //Задание 3.
+
+            Console.WriteLine("Введите размер масива:");
+            int mas = Convert.ToInt32(Console.ReadLine());
+            int[]arryed = new int[mas];
+            Random rand = new Random();
+            for(int j = 0; j < arryed.Length; j++)
+            {
+                arryed[j] = rand.Next(1000);
+                Console.WriteLine($"array[{j}]=" + arryed[j]);
+            }
+            Console.WriteLine();
+            Console.WriteLine("В порядковом виде:");
+            for(int j = 0; j < arryed.Length; j++)
+            {
+                Console.WriteLine($"array[{j}]=" + arryed[j]);
+            }
+            Console.WriteLine();
+            Console.WriteLine("Инвертированным виде:");
+            for(int j = arryed.Length-1; j >= 0; j--)
+            {
+                Console.WriteLine($"array= " + arryed[j]);
+            }
+            Console.WriteLine();
+
+
+            //Задание 4.
+
+            Console.Write("Введите размер масива: ");
+            int arrsize = Convert.ToInt32(Console.ReadLine());
+            Random random = new Random();
+            int[]arrayed1 = new int[arrsize];
+            for(int t = 0; t < arrayed1.Length; t++)
+            {
+                arrayed1[t] = random.Next(1000);
+            }
+            Console.WriteLine();
+            for(int t = 0; t < arrayed1.Length; t++)
+            {
+                Console.WriteLine($"array=[{t}]=" + arrayed1[t]);
+            }
+            Console.WriteLine();
+
+            Console.Write("count = ");
+            int Count = Convert.ToInt32(Console.ReadLine());
+            Console.Write("index = ");
+            int index = Convert.ToInt32(Console.ReadLine());
+            int []arr4 = new int[Count];
+            for(int l = 0; l < Count; l++)
+            {
+                if(l + index < arrayed1.Length)
+                {
+                    arr4[l] = arrayed1[l + index];
+                }
+                else
+                {
+                    arr4[l] = 1;
+                }
+            }
+
+            System.Console.WriteLine("Новый массив: ");
+            for(int l = 0; l < arr4.Length; l++)
+            {
+                Console.WriteLine($"new array[{l}]=" + arr4[l]);
+            }
         }
     }
 }
