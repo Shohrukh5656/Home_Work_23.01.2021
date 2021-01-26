@@ -149,26 +149,27 @@ namespace ConsoleApplication
 
             Console.Write("Введите значения Равносторонного треугольника: ");
             int ravno = int.Parse(Console.ReadLine());
-            for(int i=1;i<=ravno;i++)
+            for (int i = 1; i <= ravno; i++)
             {
-                for(int k=ravno-1;k>=i;k--)
+                for (int k = ravno - 1; k >= i; k--)
                 {
                     System.Console.Write(" ");
                 }
-                for(int j=1;j<=i;j++)
+                for (int j = 1; j <= i; j++)
                 {
-                    if((j==1|| i==j || i==ravno))
+                    if ((j == 1 || i == j || i == ravno))
                     {
                         System.Console.Write("* ");
                     }
                     else
                     {
-                        System.Console.Write(" ");
+                        System.Console.Write("  ");
                     }
                 }
-                    System.Console.WriteLine();
+                System.Console.WriteLine();
             }
             System.Console.WriteLine();
+                        
 
             Console.Write("Введите значения Ромба:");
             int romb=int.Parse(Console.ReadLine());
